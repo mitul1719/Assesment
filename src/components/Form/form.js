@@ -114,24 +114,10 @@ const Form = ({ sendData }) => {
           document.getElementById("modal").close();
           setShowTable(false);
           break;
+        default:
+          break;
       }
     }
-  };
-
-  const getPreview = () => {
-    return `
-    Name: ${
-      document.getElementById("fname").value +
-      " " +
-      document.getElementById("lname").value
-    }
-    Company: ${document.getElementById("company").value}
-    Email: ${document.getElementById("email").value}
-    Address: ${document.getElementById("address").value}
-    City: ${document.getElementById("city").value}
-    State: ${document.getElementById("state").value}
-
-    `;
   };
 
   /**
@@ -241,7 +227,7 @@ const Form = ({ sendData }) => {
                 e.preventDefault();
                 data.length > 0
                   ? exportToCsv(data)
-                  : alert("Fill in the form to generate CSV");
+                  : alert("Add Data to the table to generate CSV");
               }}
             >
               Export to CSV
